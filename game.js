@@ -25,7 +25,7 @@ let bestScore = Number(localStorage.getItem("snakeBestScore") || 0);
 let speedLevel = 1;
 
 let gameTimer = null;
-let gameSpeed = 150;
+let gameSpeed = 230;
 
 let isRunning = false;
 let isPaused = false;
@@ -48,7 +48,7 @@ function initGame() {
 
   score = 0;
   speedLevel = 1;
-  gameSpeed = 150;
+  gameSpeed = 230;
 
   isRunning = true;
   isPaused = false;
@@ -135,11 +135,11 @@ function updateGame() {
 }
 
 function updateSpeed() {
-  const newSpeedLevel = Math.floor(score / 50) + 1;
+  const newSpeedLevel = Math.floor(score / 80) + 1;
 
   if (newSpeedLevel !== speedLevel) {
     speedLevel = newSpeedLevel;
-    gameSpeed = Math.max(70, 150 - (speedLevel - 1) * 10);
+    gameSpeed = Math.max(110, 230 - (speedLevel - 1) * 8);
     startLoop();
   }
 }
